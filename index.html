@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shibin S P - Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=18">
+  <style>
+    /* Force logo colors directly in HTML to bypass any external CSS caching */
+    .nav-logo {
+      filter: brightness(0) !important;
+    }
+    [data-theme="dark"] .nav-logo {
+      filter: brightness(0) invert(1) !important;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <div class="nav-wrapper">
+    <nav class="pill-nav" id="mainNav">
+      <div class="nav-left">
+        <img src="signature.png" alt="Shibin" class="nav-logo">
+      </div>
+      <div class="nav-expandable">
+        <div class="nav-center">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#process">Process</a>
+          <a href="#experience">Experience</a>
+        </div>
+      </div>
+      <div class="nav-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-right">
+        <a href="#connect" class="btn-connect">Connect</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <main class="hero">
+    <div class="hero-container">
+      
+      <!-- Left Column: Content -->
+      <div class="hero-content">
+        
+        <div class="badge">
+          <span class="dot"></span> Available for new projects
+        </div>
+
+        <h1 class="hero-heading">
+          <span class="greeting">
+            Hi 
+            <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z"/>
+            </svg>
+            I'm Shibin
+          </span>
+          <span class="title" id="heroRole" style="display: grid; grid-template-areas: 'role'; align-items: center;">
+            <span class="role-item" style="grid-area: role; opacity: 1; visibility: visible;">Product Designer</span>
+            <span class="role-item" style="grid-area: role; opacity: 0; visibility: hidden;">UX Designer</span>
+            <span class="role-item" style="grid-area: role; opacity: 0; visibility: hidden;">Vibe Coder</span>
+            <span class="role-item" style="grid-area: role; opacity: 0; visibility: hidden;">AI Designer</span>
+          </span>
+        </h1>
+        
+        <p class="subtitle">
+          <strong class="subtitle-bold">Welcome to my little corner of the internet.</strong><br>
+          <span class="subtitle-regular">I'm a product designer who finds the<br>signal in the noise.. then makes it pretty.</span>
+        </p>
+      </div>
+
+      <!-- Right Column: Image Fan -->
+      <div class="hero-visual">
+        <div class="image-fan">
+          <div class="card card-back">
+            <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=600&q=80" alt="UI Design 1">
+          </div>
+          <div class="card card-middle">
+            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80" alt="UI Design 2">
+          </div>
+          <div class="card card-front">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="UI Design 3">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scrolling Marquee Ticker -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>TALKING TO DEVS</span>
+        <span class="marquee-dot">✦</span>
+        <span>SIPPING COFFEE</span>
+        <span class="marquee-dot">✦</span>
+        <span>INTERFACE OBSESSED</span>
+        <span class="marquee-dot">✦</span>
+        <span>TWEAKING DESIGN SYSTEM</span>
+        <span class="marquee-dot">✦</span>
+        <span>HEADING TO SANDDO-ICHI</span>
+        <span class="marquee-dot">✦</span>
+        <span>PLAYING VALORANT</span>
+        <span class="marquee-dot">✦</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>LISTENING TO LINKIN PARK</span>
+        <span class="marquee-dot">✦</span>
+        <span>EXPLORING BALI</span>
+        <span class="marquee-dot">✦</span>
+        <span>VIBE CODING</span>
+        <span class="marquee-dot">✦</span>
+        <span>MAKING COFFEE</span>
+        <span class="marquee-dot">✦</span>
+        <span>TUNING MY SUPERBIKE</span>
+        <span class="marquee-dot">✦</span>
+        <span>PLAYING VALORANT</span>
+        <span class="marquee-dot">✦</span>
+        <span>FEEDING CATS</span>
+        <span class="marquee-dot">✦</span>
+        <span>DESIGNING UI</span>
+        <span class="marquee-dot">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="work">
+    <div class="projects-container">
+      
+      <div class="project-card">
+        <div class="project-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Billzy Project" class="project-image">
+        </div>
+        <div class="project-info">
+          <div class="project-header">
+            <h3 class="project-title">Billzy - Simple Invoice Generator App</h3>
+            <a href="#" class="project-link">Peek inside ↗</a>
+          </div>
+          <p class="project-desc">A mobile invoice app case study - create bills faster, manage your shop better.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="Tools Project" class="project-image">
+        </div>
+        <div class="project-info">
+          <div class="project-header">
+            <h3 class="project-title">Tools - Emergency Service App</h3>
+            <a href="#" class="project-link">Peek inside ↗</a>
+          </div>
+          <p class="project-desc">On-demand tools and repair service app - we are here to help you.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=800&q=80" alt="Smart Home App" class="project-image">
+        </div>
+        <div class="project-info">
+          <div class="project-header">
+            <h3 class="project-title">NexHome - Smart Living</h3>
+            <a href="#" class="project-link">Peek inside ↗</a>
+          </div>
+          <p class="project-desc">A centralized IoT dashboard for controlling smart home devices efficiently.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Fintech Project" class="project-image">
+        </div>
+        <div class="project-info">
+          <div class="project-header">
+            <h3 class="project-title">Vault - Personal Finance</h3>
+            <a href="#" class="project-link">Peek inside ↗</a>
+          </div>
+          <p class="project-desc">Track expenses and manage your investments with an intuitive interface.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+
+      <!-- Left Column -->
+      <div class="about-left">
+        <h2 class="about-heading">
+          Making things with<br>intention,<br>
+          <span class="about-heading-bold">not just attention.</span>
+        </h2>
+        <div class="about-photo">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Working at desk">
+          <div class="photo-social-icons">
+            <a href="#" class="photo-social-btn" aria-label="Dribbble">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm7.938 5.563a10.18 10.18 0 012.312 6.375c-.337-.063-3.75-.75-7.187-.325-.063-.15-.137-.312-.212-.475-.212-.475-.437-.962-.675-1.437 3.8-1.55 5.525-3.775 5.762-4.138zM12 1.75c2.675 0 5.113 1.05 6.913 2.75-.188.325-1.75 2.425-5.4 3.813C11.65 4.775 9.625 2.05 9.325 1.65A10.258 10.258 0 0112 1.75zM7.5 2.325c.288.375 2.275 3.113 4.175 6.6-5.262 1.4-9.9 1.375-10.413 1.375A10.27 10.27 0 017.5 2.325zM1.75 12.013v-.35c.5.012 5.875.075 11.488-1.6.325.625.625 1.262.9 1.9-.15.038-.288.088-.437.138-5.8 1.875-8.888 6.988-9.138 7.4A10.192 10.192 0 011.75 12.013zM12 22.25a10.175 10.175 0 01-6.275-2.162c.2-.388 2.475-4.775 8.863-6.975.025-.012.05-.012.075-.025a38.59 38.59 0 012.35 8.35A10.187 10.187 0 0112 22.25zm5.725-1.95a40.066 40.066 0 00-2.2-7.95c3.188-.513 5.975.325 6.325.437a10.235 10.235 0 01-4.125 7.513z"/></svg>
+            </a>
+            <a href="#" class="photo-social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="about-right">
+
+        <!-- Experience -->
+        <p class="about-label">WHERE I'VE BEEN</p>
+
+        <div class="experience-list">
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-title-row">
+                <h3>VoyceMe</h3>
+                <span class="exp-date">2024 — Now</span>
+              </div>
+              <p class="exp-role">Product Designer</p>
+            </div>
+            <div class="exp-details">
+              <p>Leading design for GenAI products, shaping how millions of people create stories, characters, and worlds.</p>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-title-row">
+                <h3>Kaedim 3D · Awesomic</h3>
+                <span class="exp-date">2023 — 2024</span>
+              </div>
+              <p class="exp-role">Senior Product Designer</p>
+            </div>
+            <div class="exp-details">
+              <p>Designed AI-powered 3D asset generation tools and creative marketplace experiences.</p>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-title-row">
+                <h3>Medal.tv</h3>
+                <span class="exp-date">2022</span>
+              </div>
+              <p class="exp-role">Senior Product Designer</p>
+            </div>
+            <div class="exp-details">
+              <p>Redesigned the clip sharing experience for a gaming community of millions.</p>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div class="exp-title-row">
+                <h3>EY Consulting</h3>
+                <span class="exp-date">2018 — 2022</span>
+              </div>
+              <p class="exp-role">Product Designer</p>
+            </div>
+            <div class="exp-details">
+              <p>Consulted on enterprise digital transformation and internal product design systems.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="about-bio">
+          <p>
+            <strong>I've spent over a decade learning that good design is mostly listening.</strong>
+            I started in consulting at EY, moved into consumer gaming at Medal, then AI tooling at Kaedim, and now I lead design for GenAI products at VoyceMe.
+          </p>
+          <p>
+            <strong>Right now I'm deep in generative AI,</strong>
+            designing how millions of people create stories, characters, and worlds with tools that didn't exist years ago. Messy, fast, genuinely new — I like it that way.
+          </p>
+          <p>
+            <strong>I care a lot about the small things</strong>
+            — the wording on an empty state, the weight of a button press, the rhythm of a flow. That's where trust gets built.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Expertise Section -->
+  <section class="expertise-section" id="expertise">
+    <div class="expertise-container">
+      <div class="expertise-left">
+        <h2 class="expertise-heading">
+          <span class="light-text">Good design</span><br>
+          ships and keeps<br>moving
+        </h2>
+        <h3 class="cursive-heading">my tech stack</h3>
+        <div class="tech-grid">
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"></div>
+          
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Sass"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" alt="Trello"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg" alt="Framer"></div>
+          <div class="tech-icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"></div>
+        </div>
+        <a href="#process" class="tech-stack-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Explore my processes
+        </a>
+      </div>
+      <div class="expertise-right">
+        <ul class="process-list">
+          <li class="process-item">
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="process-text">Design Systems</span>
+          </li>
+          <li class="process-item">
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="process-text">Prototyping</span>
+          </li>
+          <li class="process-item">
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="process-text">AI-Powered</span>
+          </li>
+          <li class="process-item">
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+            </div>
+            <span class="process-text">Web/Mobile Apps</span>
+          </li>
+          <li class="process-item">
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="process-text">Product Strategy</span>
+          </li>
+          <li class="process-item">
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+            </div>
+            <span class="process-text">Landing Pages</span>
+          </li>
+          <li class="process-item">
+            <div class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <span class="process-text">UX / UI Consultation</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Think Section -->
+  <section class="thinking-section" id="process-thinking">
+    <div class="thinking-container">
+      <div class="thinking-left">
+        <h2 class="thinking-heading">
+          How I think<br>
+          <span class="thinking-heading-light">about my work</span>
+        </h2>
+        <div class="accordion-list">
+          <div class="accordion-item active">
+            <div class="accordion-header">
+              <span class="accordion-number">01</span>
+              <h3 class="accordion-title">Sketch ugly, decide fast</h3>
+              <span class="accordion-toggle"></span>
+              <div class="accordion-toggle-icon">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <p>Pretty mockups slow teams down. I'd rather make ten rough flows in a day and kill nine of them than spend a week protecting one beautiful idea.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span class="accordion-number">02</span>
+              <h3 class="accordion-title">Designers should write more</h3>
+              <span class="accordion-toggle"></span>
+              <div class="accordion-toggle-icon">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <p>Writing forces clarity. If I can't explain a design decision in one sentence, I probably don't understand the problem well enough yet.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span class="accordion-number">03</span>
+              <h3 class="accordion-title">Tokens over taste</h3>
+              <span class="accordion-toggle"></span>
+              <div class="accordion-toggle-icon">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <p>Design systems should be opinionated enough to move fast and flexible enough to not feel like a cage. Tokens give you both.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span class="accordion-number">04</span>
+              <h3 class="accordion-title">Defaults are decisions</h3>
+              <span class="accordion-toggle"></span>
+              <div class="accordion-toggle-icon">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <p>Every default you set is a decision you're making for millions of users. The best defaults feel invisible — that's what makes them hard to get right.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span class="accordion-number">05</span>
+              <h3 class="accordion-title">AI in the loop, not in the driver's seat</h3>
+              <span class="accordion-toggle"></span>
+              <div class="accordion-toggle-icon">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
+                </svg>
+              </div>
+            </div>
+            <div class="accordion-body">
+              <p>AI should amplify human creativity, not replace it. The best AI features feel like a helpful assistant, not an autopilot you can't override.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="connect-footer">
+    <div class="footer-marquee">
+      <div class="footer-marquee-track">
+        <div class="footer-marquee-content">
+          <span>LISTENING TO LINKIN PARK</span>
+          <span class="marquee-dot">✦</span>
+          <span>EXPLORING BALI</span>
+          <span class="marquee-dot">✦</span>
+          <span>VIBE CODING</span>
+          <span class="marquee-dot">✦</span>
+          <span>TALKING TO DEVS</span>
+          <span class="marquee-dot">✦</span>
+          <span>SIPPING COFFEE</span>
+          <span class="marquee-dot">✦</span>
+          <span>INTERFACE OBSESSED</span>
+          <span class="marquee-dot">✦</span>
+        </div>
+        <div class="footer-marquee-content" aria-hidden="true">
+          <span>LISTENING TO LINKIN PARK</span>
+          <span class="marquee-dot">✦</span>
+          <span>EXPLORING BALI</span>
+          <span class="marquee-dot">✦</span>
+          <span>VIBE CODING</span>
+          <span class="marquee-dot">✦</span>
+          <span>TALKING TO DEVS</span>
+          <span class="marquee-dot">✦</span>
+          <span>SIPPING COFFEE</span>
+          <span class="marquee-dot">✦</span>
+          <span>INTERFACE OBSESSED</span>
+          <span class="marquee-dot">✦</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container">
+      <h2 class="footer-heading">
+        Lets build<br>
+        <span class="footer-heading-light">incredible work together.</span>
+      </h2>
+      <div class="footer-contact-row">
+        <div class="footer-email-block">
+          <p class="footer-label">Email</p>
+          <a href="mailto:hello@shibin.design" class="footer-email-link">hello@shibin.design</a>
+        </div>
+        <div class="footer-social-block">
+          <p class="footer-label">Social</p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-btn" aria-label="Dribbble">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm7.938 5.563a10.18 10.18 0 012.312 6.375c-.337-.063-3.75-.75-7.187-.325-.063-.15-.137-.312-.212-.475-.212-.475-.437-.962-.675-1.437 3.8-1.55 5.525-3.775 5.762-4.138zM12 1.75c2.675 0 5.113 1.05 6.913 2.75-.188.325-1.75 2.425-5.4 3.813C11.65 4.775 9.625 2.05 9.325 1.65A10.258 10.258 0 0112 1.75zM7.5 2.325c.288.375 2.275 3.113 4.175 6.6-5.262 1.4-9.9 1.375-10.413 1.375A10.27 10.27 0 017.5 2.325zM1.75 12.013v-.35c.5.012 5.875.075 11.488-1.6.325.625.625 1.262.9 1.9-.15.038-.288.088-.437.138-5.8 1.875-8.888 6.988-9.138 7.4A10.192 10.192 0 011.75 12.013zM12 22.25a10.175 10.175 0 01-6.275-2.162c.2-.388 2.475-4.775 8.863-6.975.025-.012.05-.012.075-.025a38.59 38.59 0 012.35 8.35A10.187 10.187 0 0112 22.25zm5.725-1.95a40.066 40.066 0 00-2.2-7.95c3.188-.513 5.975.325 6.325.437a10.235 10.235 0 01-4.125 7.513z"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-row">
+        <div class="footer-menu-block">
+          <p class="footer-label">Menu</p>
+          <div class="footer-menu-links">
+            <div class="footer-menu-col">
+              <a href="#work">Work</a>
+              <a href="#process">Process</a>
+            </div>
+            <div class="footer-menu-col">
+              <a href="#about">About</a>
+              <a href="#experience">Experience</a>
+            </div>
+          </div>
+        </div>
+        <p class="footer-copyright">© 2026 Shibin S P</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Theme Toggle (Bottom Left) -->
+  <button class="floating-theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+
+  <!-- Floating CTA (Bottom Right) -->
+  <div class="cta-pill">
+    <div class="cta-text">
+      <span class="cta-primary">Send me a message</span>
+      <span class="cta-secondary">or download my resume</span>
+    </div>
+    <div class="cta-buttons">
+      <a href="mailto:hello@example.com" class="cta-icon" aria-label="Send email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M22 4L12 13L2 4"/>
+        </svg>
+      </a>
+      <a href="#" class="cta-icon" aria-label="Download resume" id="downloadResumeBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js?v=7"></script>
+</body>
+</html>
