@@ -2720,17 +2720,19 @@ a {
     font-size: 2.2rem !important;
   }
   
-  /* Layout */
+  /* Layout & Gaps */
   .hero {
-    padding: 8rem 1rem 4rem;
+    padding: 6rem 1rem 3rem !important;
   }
-  .projects-section, .about, .process-section, .thinking-section, .footer {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  .projects-section, .projects-v2, .about, .process-section, .expertise, .thinking-section, .footer {
+    padding: 4rem 1rem !important;
+  }
+  .marquee-section {
+    padding: 1.5rem 0 !important;
   }
   
   /* Adjust any large grids */
-  .about-grid, .experience-grid, .process-grid, .projects-v2-grid {
+  .about-grid, .experience-grid, .process-grid, .projects-v2-grid, .tech-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -2748,6 +2750,14 @@ a {
   }
   .section-heading, .about-heading-bold, .thinking-heading-light, .footer-heading-light {
     font-size: 1.8rem !important;
+  }
+  
+  /* Layout & Gaps Mobile */
+  .hero {
+    padding: 5rem 1rem 2rem !important;
+  }
+  .projects-section, .projects-v2, .about, .process-section, .expertise, .thinking-section, .footer {
+    padding: 3rem 1rem !important;
   }
   
   .pill-nav {
