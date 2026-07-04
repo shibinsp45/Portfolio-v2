@@ -1091,33 +1091,9 @@ a {
     height: 270px;
   }
 
-  /* Nav always collapsed on tablet */
+  /* Remove forced nav collapse on tablet */
   .pill-nav {
-    gap: 1rem;
     padding: 0.55rem 1rem 0.55rem 0.75rem;
-  }
-
-  .nav-expandable {
-    max-width: 0;
-    opacity: 0;
-    gap: 0;
-  }
-
-  .nav-dots {
-    display: flex;
-  }
-
-  .pill-nav:hover {
-    gap: 1rem;
-  }
-
-  .pill-nav:hover .nav-expandable {
-    max-width: 0;
-    opacity: 0;
-  }
-
-  .pill-nav:hover .nav-dots {
-    display: flex;
   }
 
   .projects {
@@ -2709,6 +2685,20 @@ a {
     gap: 1rem;
     padding: 1rem;
     border-radius: 24px;
+  }
+  .pill-nav.nav-collapsed {
+    padding: 1rem !important;
+    min-width: 0 !important;
+    width: 95% !important;
+  }
+  .pill-nav.nav-collapsed .nav-expandable {
+    max-width: 1000px !important;
+    opacity: 1 !important;
+    gap: 1rem !important;
+    margin: 0 !important;
+  }
+  .pill-nav.nav-collapsed .nav-dots {
+    display: none !important;
   }
   .nav-center {
     flex-wrap: wrap;
