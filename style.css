@@ -331,31 +331,18 @@ a {
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* Three-dot menu icon (hidden by default) */
+/* Hamburger menu icon (hidden by default) */
 .nav-dots {
   display: none;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
   padding: 0 0.5rem;
   cursor: pointer;
+  color: var(--text-main);
+  transition: transform 0.2s ease;
 }
-
-.nav-dots span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--text-main); /* Ensure it's visible in both themes */
-}
-
-@keyframes juggleDots {
-  0%, 100% {
-    transform: translateY(0);
-    background: #444;
-  }
-  50% {
-    transform: translateY(-5px);
-    background: #4a8cff; /* Blue color for active dot */
-  }
+.nav-dots:hover {
+  transform: scale(1.05);
 }
 
 /* Collapsed state — triggered by JS adding .nav-collapsed */
@@ -2681,14 +2668,11 @@ a {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-}
-
-@media (max-width: 768px) {
-  body { overflow-x: hidden; }
   
-  /* Navbar Mobile Chip */
+  /* Navbar Tablet/Mobile Chip */
   .pill-nav {
-    width: auto;
+    width: 95%;
+    max-width: 600px;
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
@@ -2707,6 +2691,7 @@ a {
   /* Expanded State via JS */
   .pill-nav.mobile-open {
     width: 95%;
+    max-width: 600px;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -2727,6 +2712,12 @@ a {
     gap: 1rem;
     white-space: nowrap;
   }
+}
+
+@media (max-width: 768px) {
+  body { overflow-x: hidden; }
+  
+
   
   /* Typography */
   .hero-heading {
