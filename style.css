@@ -2756,11 +2756,17 @@ a {
     gap: 2rem;
   }
   /* Typography */
-  .hero-heading {
-    font-size: 3.5rem !important;
+  .greeting {
+    font-size: 2.8rem !important;
   }
   .title {
-    font-size: 2.5rem !important;
+    font-size: 3.2rem !important;
+    margin-top: -0.2rem !important;
+  }
+  
+  /* Hide Image Fan on Mobile */
+  .hero-visual {
+    display: none !important;
   }
   .subtitle-regular {
     font-size: 1.2rem !important;
