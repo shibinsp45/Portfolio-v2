@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentScrollY > lastScrollY && currentScrollY > 100) {
       mainNav.classList.add('nav-collapsed');
       mainNav.classList.remove('mobile-open'); // Auto-close mobile menu on scroll down
+      document.body.style.overflow = ''; // unlock scroll
     } else {
       // Expand when scrolling up
       mainNav.classList.remove('nav-collapsed');
@@ -39,12 +40,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile Menu Toggle
   const navDots = document.querySelector('.nav-dots');
+  const navLinks = document.querySelectorAll('.nav-center a, .nav-right a');
+  
   if (navDots) {
     navDots.addEventListener('click', () => {
       mainNav.classList.toggle('mobile-open');
+      if (mainNav.classList.contains('mobile-open')) {
+        document.body.style.overflow = 'hidden'; // lock scroll
+      } else {
+        document.body.style.overflow = ''; // unlock scroll
+      }
     });
   }
 
+  // Close mobile menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('mobile-open');
+      document.body.style.overflow = ''; // unlock scroll
+    });
+  });
   // ========================================
   // HERO ENTRANCE ANIMATIONS
   // ========================================
