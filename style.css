@@ -1198,10 +1198,16 @@ a {
 
   .cta-primary {
     font-size: 0.8rem;
+    white-space: nowrap;
   }
 
   .cta-secondary {
-    font-size: 0.7rem;
+    display: none; /* Hide on mobile to keep it a single line */
+  }
+
+  .cta-text {
+    flex-direction: row;
+    align-items: center;
   }
 
   .cta-icon {
@@ -2696,29 +2702,24 @@ a {
   /* Navbar */
   .pill-nav {
     width: 95%;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
     gap: 1rem;
-    padding: 1rem;
-    border-radius: 24px;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
   }
-  .pill-nav.nav-collapsed {
-    padding: 1rem !important;
-    min-width: 0 !important;
-    width: 95% !important;
+  .pill-nav::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
   }
-  .pill-nav.nav-collapsed .nav-expandable {
-    max-width: 1000px !important;
-    opacity: 1 !important;
-    gap: 1rem !important;
-    margin: 0 !important;
-  }
-  .pill-nav.nav-collapsed .nav-dots {
-    display: none !important;
-  }
+  
   .nav-center {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: 1rem;
+    white-space: nowrap;
   }
   
   /* Typography */
