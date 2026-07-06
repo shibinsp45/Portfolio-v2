@@ -344,20 +344,7 @@ a {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #444;
-  animation: juggleDots 1.2s ease-in-out infinite;
-}
-
-.nav-dots span:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.nav-dots span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.nav-dots span:nth-child(3) {
-  animation-delay: 0.4s;
+  background: var(--text-main); /* Ensure it's visible in both themes */
 }
 
 @keyframes juggleDots {
@@ -2709,7 +2696,7 @@ a {
     border-radius: 40px;
   }
   
-  .nav-expandable {
+  .nav-expandable, .nav-right {
     display: none;
   }
   
@@ -2730,7 +2717,9 @@ a {
   .pill-nav.mobile-open .nav-expandable {
     display: flex;
   }
-
+  .pill-nav.mobile-open .nav-right {
+    display: flex;
+  }
   
   .nav-center {
     flex-wrap: nowrap;
