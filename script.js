@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile overlay theme toggle
+  const mobileThemeToggle = document.querySelector('.mobile-theme-toggle');
+  if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
   // ========================================
   // NAV COLLAPSE ON SCROLL
   // ========================================

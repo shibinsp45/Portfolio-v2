@@ -300,6 +300,40 @@ a {
   color: #fff;
 }
 
+/* Mobile overlay extras — hidden on desktop, visible only in mobile overlay */
+.mobile-menu-extras {
+  display: none;
+}
+
+.mobile-menu-extras .mobile-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.mobile-menu-extras .mobile-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-menu-extras .mobile-theme-toggle .icon-sun  { display: none; }
+.mobile-menu-extras .mobile-theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .mobile-menu-extras .mobile-theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .mobile-menu-extras .mobile-theme-toggle .icon-moon { display: none; }
+
+.mobile-menu-extras .mobile-connect {
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+}
+
 /* Theme toggle button — visible on desktop & landscape tablet, hidden on mobile */
 .nav-theme-toggle {
   display: inline-flex;
@@ -2815,6 +2849,14 @@ a {
     flex-direction: column;
     font-size: 1.8rem;
     gap: 2rem;
+  }
+  
+  /* Show Connect + Theme toggle inside mobile overlay */
+  .pill-nav.mobile-open .mobile-menu-extras {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
   }
   /* Typography */
   .greeting {
