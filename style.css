@@ -2699,21 +2699,38 @@ a {
 @media (max-width: 768px) {
   body { overflow-x: hidden; }
   
-  /* Navbar */
+  /* Navbar Mobile Chip */
   .pill-nav {
-    width: 95%;
+    width: auto;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 40px;
+  }
+  
+  .nav-expandable {
+    display: none;
+  }
+  
+  .nav-dots {
+    display: flex !important;
+  }
+
+  /* Expanded State via JS */
+  .pill-nav.mobile-open {
+    width: 95%;
     overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  .pill-nav::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+  .pill-nav.mobile-open::-webkit-scrollbar {
+    display: none;
   }
+  .pill-nav.mobile-open .nav-expandable {
+    display: flex;
+  }
+
   
   .nav-center {
     flex-wrap: nowrap;

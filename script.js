@@ -29,12 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Collapse when scrolling down past 100px
     if (currentScrollY > lastScrollY && currentScrollY > 100) {
       mainNav.classList.add('nav-collapsed');
+      mainNav.classList.remove('mobile-open'); // Auto-close mobile menu on scroll down
     } else {
       // Expand when scrolling up
       mainNav.classList.remove('nav-collapsed');
     }
     lastScrollY = currentScrollY;
   });
+
+  // Mobile Menu Toggle
+  const navDots = document.querySelector('.nav-dots');
+  if (navDots) {
+    navDots.addEventListener('click', () => {
+      mainNav.classList.toggle('mobile-open');
+    });
+  }
 
   // ========================================
   // HERO ENTRANCE ANIMATIONS
