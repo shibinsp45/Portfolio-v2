@@ -2746,19 +2746,29 @@ a {
   transform: translate(-50%, -50%) scale(0.85);
   padding: 0.75rem 1.6rem;
   border-radius: 9999px;
-  background: #ff6a00;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 12px 32px rgba(255, 106, 0, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 5;
   white-space: nowrap;
+}
+
+[data-theme="light"] .project-center-toggle {
+  background: rgba(255, 255, 255, 0.88);
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .project-card:hover .project-image {
