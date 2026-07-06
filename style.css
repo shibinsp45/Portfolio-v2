@@ -2767,6 +2767,13 @@ a {
    GLOBAL RESPONSIVENESS OVERRIDES
    ======================================== */
 @media (max-width: 1024px) {
+  body { overflow-x: hidden; }
+  
+  /* Hide top right floating theme toggle on tablet and mobile */
+  .floating-theme-toggle {
+    display: none !important;
+  }
+  
   .nav-center { gap: 1.5rem; }
   .hero-heading { font-size: 5rem; }
   .title { font-size: 4rem; }
@@ -2777,12 +2784,7 @@ a {
     gap: 2rem;
   }
   
-}
-
-@media (max-width: 768px) {
-  body { overflow-x: hidden; }
-  
-  /* Navbar Mobile Chip */
+  /* Navbar Tablet & Mobile Chip */
   .pill-nav {
     width: 95%;
     max-width: 600px;
@@ -2797,12 +2799,12 @@ a {
     display: none;
   }
   
-  /* Hide theme toggle on mobile */
+  /* Hide theme toggle on tablet & mobile */
   .nav-theme-toggle {
     display: none !important;
   }
   
-  /* On mobile: hide loading dots, show hamburger */
+  /* On tablet & mobile: hide loading dots, show hamburger */
   .nav-dots .dots-container {
     display: none;
   }
@@ -2876,13 +2878,16 @@ a {
     gap: 2rem;
   }
   
-  /* Show Connect + Theme toggle inside mobile overlay */
+  /* Show Connect + Theme toggle inside mobile/tablet overlay */
   .pill-nav.mobile-open .mobile-menu-extras {
     display: flex;
     align-items: center;
     gap: 1.2rem;
     margin-top: 2.5rem;
   }
+}
+
+@media (max-width: 768px) {
   /* Typography */
   .greeting {
     font-size: 2.8rem !important;
