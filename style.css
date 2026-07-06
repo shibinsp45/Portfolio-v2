@@ -300,9 +300,9 @@ a {
   color: #fff;
 }
 
-/* Theme toggle button inside navbar — hidden on desktop, visible in mobile overlay */
+/* Theme toggle button — visible on desktop & landscape tablet, hidden on mobile */
 .nav-theme-toggle {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -407,6 +407,10 @@ a {
   display: none;
 }
 
+.pill-nav.nav-collapsed .nav-theme-toggle {
+  display: none;
+}
+
 .pill-nav.nav-collapsed .nav-dots {
   display: flex;
   margin: 0 auto;
@@ -430,6 +434,10 @@ a {
 
 .pill-nav.nav-collapsed:hover .nav-dots {
   display: none;
+}
+
+.pill-nav.nav-collapsed:hover .nav-theme-toggle {
+  display: inline-flex;
 }
 
 /* Hero Section */
@@ -2728,6 +2736,19 @@ a {
   
   .nav-expandable, .nav-right {
     display: none;
+  }
+  
+  /* Hide theme toggle on mobile */
+  .nav-theme-toggle {
+    display: none !important;
+  }
+  
+  /* On mobile: hide loading dots, show hamburger */
+  .nav-dots .dots-container {
+    display: none;
+  }
+  .nav-dots .icon-hamburger {
+    display: block;
   }
   
   /* Icon Toggle */
