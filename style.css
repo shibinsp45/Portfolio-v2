@@ -183,12 +183,12 @@ a {
 }
 
 .pill-nav {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(48px) saturate(200%);
-  -webkit-backdrop-filter: blur(48px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(18, 18, 18, 0.72);
+  backdrop-filter: blur(64px) saturate(180%);
+  -webkit-backdrop-filter: blur(64px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 9999px;
-  padding: 0.35rem 0.5rem 0.35rem 0.5rem;
+  padding: 0.45rem 0.6rem 0.45rem 0.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -196,15 +196,15 @@ a {
   width: 90%;
   max-width: 860px;
   box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.08), 
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="dark"] .pill-nav {
-  background: rgba(20, 20, 20, 0.85);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  background: rgba(12, 12, 12, 0.82);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
 }
 
 .nav-left {
@@ -216,7 +216,7 @@ a {
 .nav-logo {
   height: 38px;
   object-fit: contain;
-  filter: brightness(0);
+  filter: brightness(0) invert(1);
   transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -246,8 +246,8 @@ a {
 
 .nav-center a {
   font-weight: 500;
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
   transition: color 0.2s, transform 0.2s cubic-bezier(0.4,0,0.2,1);
   white-space: nowrap;
   display: inline-block;
@@ -255,11 +255,11 @@ a {
 }
 
 [data-theme="dark"] .nav-center a {
-  color: #999;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .nav-center a:hover {
-  color: #000;
+  color: #fff;
   transform: translateY(-1px);
 }
 
@@ -279,12 +279,12 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 9999px;
   padding: 0.6rem 1.5rem;
   font-weight: 500;
   font-size: 0.95rem;
-  background: #000;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -292,19 +292,23 @@ a {
   cursor: pointer;
 }
 
+.btn-connect:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
 [data-theme="dark"] .btn-connect {
   color: #fff;
 }
 
-/* Theme toggle button inside navbar */
+/* Theme toggle button inside navbar — hidden on desktop, visible in mobile overlay */
 .nav-theme-toggle {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: transparent;
   color: #fff;
   cursor: pointer;
@@ -313,7 +317,7 @@ a {
   flex-shrink: 0;
 }
 .nav-theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Icon visibility */
@@ -328,7 +332,7 @@ a {
   color: #fff;
 }
 [data-theme="dark"] .nav-theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Hamburger menu icon & Close icon (hidden by default) */
