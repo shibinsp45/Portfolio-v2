@@ -321,4 +321,188 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ========================================
+  // PROJECT DETAIL MODAL & HASH ROUTER
+  // ========================================
+  const projectsData = {
+    billzy: {
+      title: "Billzy - Simple Invoice Generator App",
+      subtitle: "A mobile invoice app case study — create bills faster, manage your shop better.",
+      category: "Mobile Product Design",
+      role: "Lead Product Designer",
+      year: "2024",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      stats: [
+        { label: "App Store Rating", value: "4.9 ★" },
+        { label: "Active Downloads", value: "250,000+" },
+        { label: "Invoice Speed", value: "< 30s" }
+      ],
+      description: "Billzy is engineered for fast-paced retail owners and freelancers who need to issue professional, tax-compliant invoices in seconds right from their phone.",
+      features: [
+        "Instant PDF invoice generation with 1-tap WhatsApp sharing",
+        "Offline-first sync supporting multi-currency & localized taxes",
+        "Integrated inventory lookup with barcode camera scanner",
+        "Automated payment reminders & client balance tracking"
+      ],
+      tech: ["Figma", "React Native", "GSAP", "Node.js", "MongoDB"]
+    },
+    tools: {
+      title: "Tools - Emergency Service App",
+      subtitle: "On-demand repair, technician dispatch, and tool rental platform.",
+      category: "On-Demand Logistics / Mobile",
+      role: "Senior UX Designer",
+      year: "2023 — 2024",
+      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80",
+      stats: [
+        { label: "Avg Dispatch", value: "12 mins" },
+        { label: "Verified Mechanics", value: "1,500+" },
+        { label: "User Satisfaction", value: "98%" }
+      ],
+      description: "Tools solves home & automotive emergencies by connecting users with nearby certified handymen and specialty tool rentals in real time.",
+      features: [
+        "Live GPS tracking for dispatched technicians and tool delivery",
+        "Transparent flat-rate pricing calculator with instant quotes",
+        "Peer-to-peer equipment rental with digital damage insurance",
+        "In-app video diagnostics for quick remote estimation"
+      ],
+      tech: ["Figma", "Flutter", "Mapbox API", "Firebase", "WebSockets"]
+    },
+    nexhome: {
+      title: "NexHome - Smart Living Dashboard",
+      subtitle: "A centralized IoT dashboard for controlling smart home devices efficiently.",
+      category: "IoT / Web & Mobile Ecosystem",
+      role: "Product Design Lead",
+      year: "2023",
+      image: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=1200&q=80",
+      stats: [
+        { label: "Connected Devices", value: "2M+" },
+        { label: "Energy Savings", value: "24%" },
+        { label: "Automation Routines", value: "15k / day" }
+      ],
+      description: "NexHome aggregates fragmented smart home ecosystems (lighting, security, climate, solar) into an elegant glassmorphic dashboard with AI energy routines.",
+      features: [
+        "Custom room scenes & one-tap contextual automation routines",
+        "Real-time energy consumption telemetry & predictive cost alerts",
+        "Low-latency HD security camera streaming with AI motion tags",
+        "Multi-user permission levels for family members and guests"
+      ],
+      tech: ["Figma", "Next.js", "TailwindCSS", "MQTT", "WebSockets"]
+    },
+    vault: {
+      title: "Vault - Personal Finance & Wealth",
+      subtitle: "Intelligent expense tracking & automated investment management.",
+      category: "Fintech / iOS & Web App",
+      role: "Senior Product Designer",
+      year: "2022 — 2023",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      stats: [
+        { label: "Tracked Assets", value: "$450M+" },
+        { label: "Active Investors", value: "180,000" },
+        { label: "Sync Accuracy", value: "99.9%" }
+      ],
+      description: "Vault simplifies net-worth tracking, portfolio rebalancing, and daily budget goals with interactive charts and automated bank statement categorization.",
+      features: [
+        "Zero-knowledge encrypted bank sync powered by Plaid API",
+        "Predictive cash-flow forecasting & monthly savings benchmarks",
+        "Multi-asset portfolio breakdown (Stocks, Crypto, Real Estate)",
+        "Custom financial goal progress widgets with smart nudges"
+      ],
+      tech: ["Figma", "SwiftUI", "D3.js", "Plaid API", "Node.js"]
+    }
+  };
+
+  const projectModal = document.getElementById('projectModal');
+  const projectModalContent = document.getElementById('projectModalContent');
+  const projectModalClose = document.getElementById('projectModalClose');
+  const projectModalBackdrop = document.getElementById('projectModalBackdrop');
+
+  function renderProjectModal(projectId) {
+    const data = projectsData[projectId];
+    if (!data) return;
+
+    projectModalContent.innerHTML = `
+      <img src="${data.image}" alt="${data.title}" class="modal-hero-img">
+      <span class="modal-category-badge">${data.category}</span>
+      <h2 class="modal-project-title">${data.title}</h2>
+      <p class="modal-project-subtitle">${data.subtitle}</p>
+
+      <div class="modal-stats-grid">
+        ${data.stats.map(s => `
+          <div class="modal-stat-card">
+            <div class="modal-stat-value">${s.value}</div>
+            <div class="modal-stat-label">${s.label}</div>
+          </div>
+        `).join('')}
+      </div>
+
+      <h3 class="modal-section-title">Overview</h3>
+      <p style="font-size:1.1rem; line-height:1.7; color:var(--text-gray); margin-bottom:2rem;">${data.description}</p>
+
+      <h3 class="modal-section-title">Key UX Features</h3>
+      <ul class="modal-features-list">
+        ${data.features.map(f => `<li>${f}</li>`).join('')}
+      </ul>
+
+      <h3 class="modal-section-title">Technologies & Tools</h3>
+      <div class="modal-tech-tags">
+        ${data.tech.map(t => `<span class="modal-tech-tag">${t}</span>`).join('')}
+      </div>
+
+      <div class="modal-actions">
+        <button class="modal-btn-primary" onclick="closeProjectModal()">
+          Close Case Study ✕
+        </button>
+      </div>
+    `;
+
+    projectModal.classList.add('active');
+    projectModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closeProjectModal = function() {
+    if (!projectModal) return;
+    projectModal.classList.remove('active');
+    projectModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (window.location.hash.startsWith('#project-')) {
+      history.pushState('', document.title, window.location.pathname + window.location.search);
+    }
+  };
+
+  function handleProjectHash() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#project-')) {
+      const projectId = hash.replace('#project-', '');
+      renderProjectModal(projectId);
+    } else {
+      if (projectModal && projectModal.classList.contains('active')) {
+        closeProjectModal();
+      }
+    }
+  }
+
+  // Event Listeners for project cards and links
+  document.querySelectorAll('[data-project-id]').forEach(elem => {
+    elem.addEventListener('click', (e) => {
+      const projectId = elem.getAttribute('data-project-id');
+      if (projectId) {
+        window.location.hash = `#project-${projectId}`;
+      }
+    });
+  });
+
+  if (projectModalClose) projectModalClose.addEventListener('click', closeProjectModal);
+  if (projectModalBackdrop) projectModalBackdrop.addEventListener('click', closeProjectModal);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal && projectModal.classList.contains('active')) {
+      closeProjectModal();
+    }
+  });
+
+  window.addEventListener('hashchange', handleProjectHash);
+  // Check hash on page load
+  handleProjectHash();
+
 });

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=38">
+  <link rel="stylesheet" href="style.css?v=39">
 </head>
 <body>
 
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="nav-right">
-        <a href="#connect-footer" class="btn-connect">Connect me</a>
+        <a href="#connect-footer" class="btn-connect">Connect</a>
       </div>
       <div class="nav-dots" aria-label="Toggle Menu">
         <!-- Loading Dots (Desktop collapsed) -->
@@ -142,53 +142,53 @@
   <section class="projects-section" id="work">
     <div class="projects-container">
       
-      <div class="project-card">
+      <div class="project-card" data-project-id="billzy">
         <div class="project-image-wrapper">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Billzy Project" class="project-image">
         </div>
         <div class="project-info">
           <div class="project-header">
             <h3 class="project-title">Billzy - Simple Invoice Generator App</h3>
-            <a href="#" class="project-link" aria-label="View Project">Peek inside ↗</a>
+            <a href="#project-billzy" class="project-link" data-project-id="billzy" aria-label="View Project">Peek inside ↗</a>
           </div>
           <p class="project-desc">A mobile invoice app case study - create bills faster, manage your shop better.</p>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-project-id="tools">
         <div class="project-image-wrapper">
           <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="Tools Project" class="project-image">
         </div>
         <div class="project-info">
           <div class="project-header">
             <h3 class="project-title">Tools - Emergency Service App</h3>
-            <a href="#" class="project-link" aria-label="View Project">Peek inside ↗</a>
+            <a href="#project-tools" class="project-link" data-project-id="tools" aria-label="View Project">Peek inside ↗</a>
           </div>
           <p class="project-desc">On-demand tools and repair service app - we are here to help you.</p>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-project-id="nexhome">
         <div class="project-image-wrapper">
           <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=800&q=80" alt="Smart Home App" class="project-image">
         </div>
         <div class="project-info">
           <div class="project-header">
             <h3 class="project-title">NexHome - Smart Living</h3>
-            <a href="#" class="project-link" aria-label="View Project">Peek inside ↗</a>
+            <a href="#project-nexhome" class="project-link" data-project-id="nexhome" aria-label="View Project">Peek inside ↗</a>
           </div>
           <p class="project-desc">A centralized IoT dashboard for controlling smart home devices efficiently.</p>
         </div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" data-project-id="vault">
         <div class="project-image-wrapper">
           <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Fintech Project" class="project-image">
         </div>
         <div class="project-info">
           <div class="project-header">
             <h3 class="project-title">Vault - Personal Finance</h3>
-            <a href="#" class="project-link" aria-label="View Project">Peek inside ↗</a>
+            <a href="#project-vault" class="project-link" data-project-id="vault" aria-label="View Project">Peek inside ↗</a>
           </div>
           <p class="project-desc">Track expenses and manage your investments with an intuitive interface.</p>
         </div>
@@ -570,8 +570,24 @@
 
 
 
+  <!-- Project Detail Modal Overlay -->
+  <div class="project-modal-overlay" id="projectModal" aria-hidden="true">
+    <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
+    <div class="project-modal-dialog">
+      <button class="project-modal-close" id="projectModalClose" aria-label="Close project modal">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="project-modal-content" id="projectModalContent">
+        <!-- Case study content dynamically rendered here -->
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
