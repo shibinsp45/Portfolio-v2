@@ -331,7 +331,7 @@ a {
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* Three-dot menu icon & Close icon (hidden by default) */
+/* Hamburger menu icon & Close icon (hidden by default) */
 .nav-dots {
   display: none;
   align-items: center;
@@ -339,35 +339,11 @@ a {
   padding: 0 0.5rem;
   cursor: pointer;
   color: var(--text-main);
+  transition: transform 0.2s ease;
 }
 
-.dots-container {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.dots-container span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--text-main);
-  transition: background 0.3s ease;
-}
-
-/* Make it interactive: play loading animation on hover */
-.nav-dots:hover .dots-container span {
-  animation: juggleDots 0.8s ease-in-out infinite;
-  background: #4a8cff;
-}
-
-.nav-dots:hover .dots-container span:nth-child(1) { animation-delay: 0s; }
-.nav-dots:hover .dots-container span:nth-child(2) { animation-delay: 0.15s; }
-.nav-dots:hover .dots-container span:nth-child(3) { animation-delay: 0.3s; }
-
-@keyframes juggleDots {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+.nav-dots:hover {
+  transform: scale(1.05);
 }
 
 /* Collapsed state — triggered by JS adding .nav-collapsed */
@@ -2694,7 +2670,12 @@ a {
     gap: 2rem;
   }
   
-  /* Navbar Tablet/Mobile Chip */
+}
+
+@media (max-width: 768px) {
+  body { overflow-x: hidden; }
+  
+  /* Navbar Mobile Chip */
   .pill-nav {
     width: 95%;
     max-width: 600px;
@@ -2716,14 +2697,14 @@ a {
   .nav-dots .icon-close {
     display: none;
   }
-  .pill-nav.mobile-open .nav-dots .dots-container {
+  .pill-nav.mobile-open .nav-dots .icon-hamburger {
     display: none;
   }
   .pill-nav.mobile-open .nav-dots .icon-close {
     display: block;
   }
 
-  /* Expanded State via JS - Fullscreen Overlay */
+  /* Expanded State via JS - Fullscreen Overlay with Animation */
   .pill-nav.mobile-open {
     position: fixed;
     top: 0;
@@ -2738,7 +2719,18 @@ a {
     align-items: center;
     z-index: 9999;
     padding: 2rem;
+    opacity: 0;
+    transform: scale(0.98) translateY(-10px);
+    animation: menuSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+  
+  @keyframes menuSlideIn {
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
   .pill-nav.mobile-open::-webkit-scrollbar {
     display: none;
   }
@@ -2763,13 +2755,6 @@ a {
     font-size: 1.8rem;
     gap: 2rem;
   }
-}
-
-@media (max-width: 768px) {
-  body { overflow-x: hidden; }
-  
-
-  
   /* Typography */
   .hero-heading {
     font-size: 3.5rem !important;
