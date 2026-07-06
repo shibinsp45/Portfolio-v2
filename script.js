@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set(ctaPill, { y: 120, opacity: 0, scale: 0.8 });
 
     ScrollTrigger.create({
-      trigger: '.marquee-section',
+      trigger: '.projects-section',
       start: 'top 80%',
       once: true,
       onEnter: () => {
