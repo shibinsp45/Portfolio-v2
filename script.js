@@ -75,9 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // HERO ENTRANCE ANIMATIONS
   // ========================================
   gsap.from('.nav-wrapper', { y: -50, opacity: 0, duration: 1, ease: 'power3.out' });
-  gsap.from('.badge', { opacity: 0, y: 20, duration: 1, delay: 0.2, ease: 'power3.out' });
-  gsap.from('.hero-heading', { opacity: 0, y: 40, duration: 1, delay: 0.4, ease: 'power3.out' });
-  gsap.from('.subtitle', { opacity: 0, y: 20, duration: 1, delay: 0.6, ease: 'power3.out' });
+  gsap.from('.hero-heading', { opacity: 0, y: 40, duration: 1, delay: 0.3, ease: 'power3.out' });
+  gsap.from('.subtitle', { opacity: 0, y: 20, duration: 1, delay: 0.5, ease: 'power3.out' });
   
   // Image cards cascade
   gsap.from('.card-back', { x: 100, y: 100, rotation: 0, opacity: 0, duration: 1.2, delay: 0.6, ease: 'back.out(1.2)' });
@@ -140,11 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   // PROJECTS — scroll-triggered entrance
   // ========================================
-  gsap.from('.projects-heading', {
-    scrollTrigger: { trigger: '.projects', start: 'top 80%' },
-    y: 60, opacity: 0, duration: 1, ease: 'power3.out'
-  });
-
   gsap.utils.toArray('.project-card').forEach((card, i) => {
     gsap.from(card, {
       scrollTrigger: { trigger: card, start: 'top 85%' },
@@ -296,11 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.from('.thinking-heading', {
       scrollTrigger: { trigger: '.thinking-section', start: 'top 80%' },
       y: 60, opacity: 0, duration: 1, ease: 'power3.out'
-    });
-
-    gsap.from('.linkedin-card', {
-      scrollTrigger: { trigger: '.thinking-right', start: 'top 85%' },
-      y: 40, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out'
     });
 
     gsap.utils.toArray('.accordion-item').forEach((item, i) => {
