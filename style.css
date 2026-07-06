@@ -183,10 +183,10 @@ a {
 }
 
 .pill-nav {
-  background: rgba(18, 18, 18, 0.72);
-  backdrop-filter: blur(64px) saturate(180%);
-  -webkit-backdrop-filter: blur(64px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(48px) saturate(200%);
+  -webkit-backdrop-filter: blur(48px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 9999px;
   padding: 0.45rem 0.6rem 0.45rem 0.6rem;
   display: flex;
@@ -196,15 +196,15 @@ a {
   width: 90%;
   max-width: 860px;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 12px 40px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="dark"] .pill-nav {
-  background: rgba(12, 12, 12, 0.82);
-  border-color: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  background: rgba(18, 18, 18, 0.72);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
 .nav-left {
@@ -216,7 +216,7 @@ a {
 .nav-logo {
   height: 38px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
   transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -247,20 +247,20 @@ a {
 .nav-center a {
   font-weight: 500;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: #444;
   transition: color 0.2s, transform 0.2s cubic-bezier(0.4,0,0.2,1);
   white-space: nowrap;
   display: inline-block;
   padding: 0.35rem 0;
 }
 
-[data-theme="dark"] .nav-center a {
-  color: rgba(255, 255, 255, 0.6);
+.nav-center a:hover {
+  color: #000;
+  transform: translateY(-1px);
 }
 
-.nav-center a:hover {
-  color: #fff;
-  transform: translateY(-1px);
+[data-theme="dark"] .nav-center a {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 [data-theme="dark"] .nav-center a:hover {
@@ -279,12 +279,12 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 9999px;
   padding: 0.6rem 1.5rem;
   font-weight: 500;
   font-size: 0.95rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: #000;
   color: #fff;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -293,11 +293,18 @@ a {
 }
 
 .btn-connect:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: #222;
+  transform: translateY(-1px);
 }
 
 [data-theme="dark"] .btn-connect {
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .btn-connect:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 /* Mobile overlay extras — hidden on desktop, visible only in mobile overlay */
@@ -397,14 +404,23 @@ a {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .dots-container span {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 /* Interactive & Collapsed: juggle/dancing animation */
 .pill-nav.nav-collapsed .dots-container span,
 .nav-dots:hover .dots-container span {
   animation: juggleDots 0.8s ease-in-out infinite;
+  background: #000;
+}
+
+[data-theme="dark"] .pill-nav.nav-collapsed .dots-container span,
+[data-theme="dark"] .nav-dots:hover .dots-container span {
   background: #fff;
 }
 
