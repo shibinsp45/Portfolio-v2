@@ -335,19 +335,51 @@ a {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Hamburger menu icon & Close icon (hidden by default) */
+/* Nav-dots container (hidden by default) */
 .nav-dots {
   display: none;
   align-items: center;
   justify-content: center;
   padding: 0 0.5rem;
   cursor: pointer;
-  color: var(--text-main);
+  color: #fff;
   transition: transform 0.2s ease;
 }
 
-.nav-dots:hover {
-  transform: scale(1.05);
+/* By default hide hamburger & close icons (they are mobile-only) */
+.nav-dots .icon-hamburger,
+.nav-dots .icon-close {
+  display: none;
+}
+
+/* Loading dots styling */
+.dots-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dots-container span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transition: background 0.3s ease;
+}
+
+/* Interactive: juggle animation on hover */
+.nav-dots:hover .dots-container span {
+  animation: juggleDots 0.8s ease-in-out infinite;
+  background: #fff;
+}
+
+.nav-dots:hover .dots-container span:nth-child(1) { animation-delay: 0s; }
+.nav-dots:hover .dots-container span:nth-child(2) { animation-delay: 0.15s; }
+.nav-dots:hover .dots-container span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes juggleDots {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 /* Collapsed state — triggered by JS adding .nav-collapsed */
@@ -371,9 +403,13 @@ a {
   margin: 0;
 }
 
+.pill-nav.nav-collapsed .nav-right {
+  display: none;
+}
+
 .pill-nav.nav-collapsed .nav-dots {
   display: flex;
-  margin: 0 auto; /* centers if space allows */
+  margin: 0 auto;
 }
 
 /* Hover to expand back on desktop */
