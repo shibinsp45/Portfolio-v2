@@ -444,7 +444,7 @@ a {
 }
 
 .pill-nav.nav-collapsed .nav-right {
-  display: none;
+  display: flex;
 }
 
 .pill-nav.nav-collapsed .nav-dots {
